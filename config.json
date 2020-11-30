@@ -2,7 +2,6 @@
     "source" : ["./release/darwin/cfallow"],
     "bundle_id" : "lol.levi.go.cfallow",
     "apple_id": {
-        "username" : "@env:AC_USERNAME",
         "password":  "@env:AC_PASSWORD"
     },
     "sign" :{
