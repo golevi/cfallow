@@ -64,8 +64,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: release-binaries.zip
-        asset_name: release-binaries.zip
+        asset_path: darwin.zip
+        asset_name: darwin.zip
         asset_content_type: application/zip
 
 #
