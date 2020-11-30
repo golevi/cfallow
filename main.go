@@ -8,9 +8,20 @@ import (
 	"github.com/golevi/cfallow/cfa"
 )
 
+var (
+	// Commit of build
+	Commit = ""
+	// Version of client
+	Version = ""
+	// BuildTime is when it was built
+	BuildTime = ""
+)
+
 func main() {
 	ip := cfa.GetIP()
 	name, _ := os.Hostname()
+
+	fmt.Println(Version, " - ", Commit, " - ", BuildTime)
 
 	hash := md5.New()
 	hash.Write([]byte(name))
