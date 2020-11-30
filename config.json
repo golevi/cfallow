@@ -1,0 +1,18 @@
+{
+    "source" : ["./release/darwin/cfallow"],
+    "bundle_id" : "lol.levi.go.cfallow",
+    "apple_id": {
+        "username" : "@env:AC_USERNAME",
+        "password":  "@env:AC_PASSWORD"
+    },
+    "sign" :{
+        "application_identity" : "800B9CAD671A557C80455E08294DE2FD60A52D83"
+    },
+    "dmg" :{
+        "output_path":  "./release/darwin/cfallow.dmg",
+        "volume_name":  "CFAllow"
+    },
+    "zip" :{
+        "output_path" : "./release/darwin/cfallow.zip"
+    }
+}
