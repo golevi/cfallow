@@ -53,15 +53,19 @@ jobs:
       run: |
         ./scripts/sign.sh
 
-  upload:
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-    - name: Upload build-artifacts
-      uses: skx/github-action-publish-binaries@master
+    - name: Zip up release directory
+      run: |
+        zip -r darwin.zip release/darwin/
+
+    - name: Upload mac release binary Zip
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        args: "./release/*.tar.gz"
-#
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: release-binaries.zip
+        asset_name: release-binaries.zip
+        asset_content_type: application/zip
+
 #
