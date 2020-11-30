@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/md5"
 	"fmt"
 	"os"
 
@@ -11,7 +12,14 @@ func main() {
 	ip := cfa.GetIP()
 	name, _ := os.Hostname()
 
+	hash := md5.New()
+	hash.Write([]byte(name))
+	h := hash.Sum(nil)
+
+	name = fmt.Sprintf("%x", h)
+
 	fmt.Println("Starting...")
+	fmt.Printf("Rule hash %s\n", name)
 
 	fmt.Printf("Your IP %s\n", ip)
 	fmt.Println("=========================================================")
