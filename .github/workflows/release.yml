@@ -54,6 +54,7 @@ jobs:
   release:
       needs: sign
       name: Release the binaries
+      runs-on: ubuntu-latest
       steps:
       - name: Checkout
         uses: actions/checkout@v2
