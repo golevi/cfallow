@@ -1,4 +1,4 @@
-BINARY := hello-github
+BINARY := cfallow
 
 .PHONY: windows
 windows:
