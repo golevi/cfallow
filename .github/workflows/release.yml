@@ -74,6 +74,7 @@ jobs:
         run: |
           unzip release/darwin/cfallow.zip
           rm release/darwin/cfallow.zip
+          chmod +x release/darwin/cfallow
           tar -cf release/darwin-signed.tar.gz release/darwin
 
       - name: Upload build-artifacts
