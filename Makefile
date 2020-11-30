@@ -16,7 +16,6 @@ linux:
 darwin:
 	mkdir -p release/darwin/
 	GOOS=darwin GOARCH=amd64 go build -ldflags="-X 'main.Version=$(cat .env)' -X 'main.BuildTime=$(date)' -X 'main.Commit=$(git rev-parse --short HEAD)'" -o release/darwin/$(BINARY)
-	tar -cf release/darwin.tar.gz release/darwin
 
 .PHONY: build
 build:  windows linux darwin

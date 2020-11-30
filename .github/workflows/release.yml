@@ -51,6 +51,11 @@ jobs:
         AC_PASSWORD: ${{ secrets.AC_PASSWORD }}
       run: |
         ./scripts/sign.sh
+    - name: upload signed binary artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: binaries
+        path: release/
   release:
       needs: sign
       name: Release the binaries
