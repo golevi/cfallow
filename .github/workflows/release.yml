@@ -65,10 +65,16 @@ jobs:
           name: binaries
           path: release/
 
+      - name: Unzip and tarball
+        run: |
+          unzip release/darwin/cfallow.zip
+          rm release/darwin/cfallow.zip
+          tar -cf release/darwin-signed.tar.gz release/darwin
+
       - name: Upload build-artifacts
         uses: skx/github-action-publish-binaries@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: "./release/*.zip"
+          args: "./release/*.tar.gz"
 #
