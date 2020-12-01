@@ -2,7 +2,7 @@
 
 ## Usage
 
-You must authenticate with Cloudflare using either an API Token.
+You must authenticate with a Cloudflare API Token.
 
 To use an API Token, set the `CF_ALLOW` environment variable:
 
