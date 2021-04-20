@@ -1,5 +1,13 @@
 # cfallow
 
+## Install
+
+If you have Go installed on your computer:
+
+```bash
+go install github.com/golevi/cfallow
+```
+
 ## Usage
 
 You must authenticate with a Cloudflare API Token.
