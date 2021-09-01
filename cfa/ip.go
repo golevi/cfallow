@@ -21,7 +21,7 @@ func GetIP() string {
 	if err != nil {
 		log.Println(err)
 
-		// Allow skipping TLS verfication is there was an error
+		// Allow skipping TLS verfication if there was an error
 		http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{
 			InsecureSkipVerify: true,
 		}
